@@ -1,0 +1,8 @@
+__pycache__/
+*.txt
+env/
+venv/
+images/
+.vscode/
+bot.log
+*.log
