@@ -13,7 +13,7 @@ logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s',
                     )
 
 def main():
-    mybot = Updater('API_KEY', request_kwargs=PROXY)
+    mybot = Updater('API_KEy', request_kwargs=PROXY)
 
     dp = mybot.dispatcher
 
