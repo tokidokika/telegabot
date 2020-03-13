@@ -13,7 +13,7 @@ logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s',
                     )
 
 def main():
-    mybot = Updater('API_KEy', request_kwargs=PROXY)
+    mybot = Updater('API_KEY', request_kwargs=PROXY)
 
     dp = mybot.dispatcher
 
@@ -26,6 +26,7 @@ def main():
     dp.add_handler(MessageHandler(Filters.text, talk_to_me, pass_user_data=True))
     dp.add_handler(MessageHandler(Filters.contact, get_contact, pass_user_data=True))
     dp.add_handler(MessageHandler(Filters.location, get_location, pass_user_data=True))
+    dp.add_handler(MessageHandler(Filters.photo, check_user_photo, pass_user_data=True))
     
     mybot.start_polling()
     mybot.idle()

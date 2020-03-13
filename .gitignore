@@ -5,3 +5,4 @@ images/
 .vscode/
 bot.log
 *.log
+downloads/

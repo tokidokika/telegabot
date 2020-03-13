@@ -1,5 +1,7 @@
 import datetime
 from glob import glob
+import os
+
 from random import choice
 
 import ephem
@@ -37,7 +39,8 @@ def get_constellation_by_planet(planet):
         'Jupiter': ephem.Jupiter,
         'Venus': ephem.Venus,
         'Neptune': ephem.Neptune,
-        'Moon': ephem.Moon
+        'Moon': ephem.Moon,
+        'Sun': ephem.Sun
         
     }
     planet_func = dct[user_say]
@@ -63,3 +66,12 @@ def change_avatar(bot, update, user_data):
         del user_data['smile']
     smile = get_user_smile(user_data)
     update.message.reply_text(f'Готово: {smile}')
+
+def check_user_photo(bot, update, user_data):
+    update.message.reply_text('Обрабатываю фото')
+    os.mkdir('downloads', exist_ok=True)
+    photo_file = bot.getFile(update.message.photo[-1].file_id)
+    filename = os.path.join('downloads', '{}.jpg'.format(photo_file.file_id))
+    print(filename)
+    # photo_file.download(filename)
+    # update
