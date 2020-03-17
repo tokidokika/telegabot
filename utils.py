@@ -6,7 +6,7 @@ from emoji import emojize
 
 USER_EMOJI = [':smiley_cat:', ':smiling_imp:', ':panda_face:', ':dog:']
 
-CLARIFAI_API_KEY = '907c4c77d95543e18e3f50a804209bce'
+CLARIFAI_API_KEY = 'API'
 
 
 def get_user_smile(user_data):
@@ -22,7 +22,8 @@ def get_keyboard():
     location_button = KeyboardButton("Прислать локацию", request_location=True)
     my_keyboard = ReplyKeyboardMarkup([
                                         ["Прислать котика", "Сменить смайлик"], 
-                                        [contact_button, location_button]
+                                        [contact_button, location_button],
+                                        ['Заполнить анкету']
                                       ], resize_keyboard=True
                                      )
     return my_keyboard
